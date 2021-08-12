@@ -1,0 +1,130 @@
+.image-hotspot {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+
+    img {
+        max-width: 100%;
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+
+        &-text {
+            --content-width: 200px;
+            background-color: rgba(255,255,255,0.8);
+            box-sizing: border-box;
+            color: #333;
+            font-size: 16px;
+            line-height: 30px;
+            padding: 10px;
+            width: var(--content-width);
+
+            &--left {
+                border-left: 2px dotted #a6a6a6;
+            }
+    
+            &--right {
+                border-right: 2px dotted #a6a6a6;
+            }
+    
+            &--up {
+                border-top: 2px dotted #a6a6a6;
+            }
+    
+            &--down {
+                border-bottom: 2px dotted #a6a6a6;
+            }
+        }
+    }
+
+    &__spacer {
+        display: block;
+        
+        &--left {
+            border-left: 2px dotted #a6a6a6;
+        }
+
+        &--right {
+            border-right: 2px dotted #a6a6a6;
+        }
+
+        &--up {
+            border-top: 2px dotted #a6a6a6;
+        }
+
+        &--down {
+            border-bottom: 2px dotted #a6a6a6;
+        }
+    }
+
+    &__item {
+        position: absolute;
+
+        &--active {
+            .image-hotspot__content {
+                display: block;
+
+                &.image-hotspot__content--horizontal {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &__trigger {
+        background-color: #fff;
+        border: 1px solid #a6a6a6;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        outline: none;
+        user-select: none;
+
+        &:before {
+            content: '+';
+        }
+
+        &:hover:before {
+            content: '-';
+        }
+
+        &-pulse {
+            border: 1px solid #a6a6a6;
+            position: absolute;
+            top: -11px;
+            left: -11px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            opacity: 0;
+        }
+
+        &-pulse--1 {
+            animation: pulse 2s linear infinite 0s;
+        }
+
+        &-pulse--2 {
+            animation: pulse 2s linear infinite 1s;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.5)
+    }
+
+    33% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5)
+    }
+}

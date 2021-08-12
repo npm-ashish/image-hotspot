@@ -1,0 +1,22 @@
+{
+  "name": "image-hotspot",
+  "version": "1.0.0",
+  "description": "image hotspot for showing feature details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm-ashish/image-hotspot.git"
+  },
+  "keywords": [
+    "image-hotspot"
+  ],
+  "author": "Ashish - https://kumarashish.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npm-ashish/image-hotspot/issues"
+  },
+  "homepage": "https://github.com/npm-ashish/image-hotspot#readme"
+}
