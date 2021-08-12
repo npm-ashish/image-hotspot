@@ -172,12 +172,29 @@ export default class Hotspot {
 
             // toggle the current item
             if(item === this.hotspotItem) {
-                this.hotspotItem.classList.toggle('image-hotspot__item--active');
+                if(item.classList.contains('image-hotspot__item--active')) {
+                    // close self
+                    item.classList.add('image-hotspot__item--closing');
+
+                    setTimeout(() => {
+                        item.classList.remove('image-hotspot__item--closing');
+                        item.classList.remove('image-hotspot__item--active');
+                    }, 800);
+                } else {
+                    // open self
+                    item.classList.add('image-hotspot__item--active');
+                }
+
                 return;
             }
 
             // hide other items
-            item.classList.remove('image-hotspot__item--active');
+            item.classList.add('image-hotspot__item--closing');
+
+            setTimeout(() => {
+                item.classList.remove('image-hotspot__item--closing');
+                item.classList.remove('image-hotspot__item--active');
+            }, 800);
         });
     }
 
