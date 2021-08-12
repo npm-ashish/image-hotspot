@@ -41,8 +41,8 @@ header {
 
 @media all and (max-width: 30em) {
   .source-link {
-      display: block;
-      margin: 0.2em auto;
+    display: block;
+    margin: 0.2em auto;
   }
 }
 /*# sourceMappingURL=app.css.map */
