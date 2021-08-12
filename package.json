@@ -1,6 +1,6 @@
 {
   "name": "image-hotspot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "image hotspot for showing feature details in javascript",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/npm-ashish/image-hotspot.git"
   },
   "keywords": [
-    "image-hotspot", "js image hotspot"
+    "image-hotspot",
+    "js image hotspot"
   ],
   "author": "Ashish - https://kumarashish.com",
   "license": "MIT",
