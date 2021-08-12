@@ -70,6 +70,14 @@
                     display: flex;
                 }
             }
+
+            .image-hotspot__trigger {
+                transform: rotate(90deg);
+
+                &:before {
+                    opacity: 0;
+                }
+            }
         }
     }
 
@@ -81,16 +89,40 @@
         height: 30px;
         border-radius: 50%;
         outline: none;
+        transition: .5s transform;
         user-select: none;
         position: relative;
         z-index: 1;
 
-        &:before {
-            content: '+';
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 1px solid #000;
         }
 
-        &:hover:before {
-            content: '-';
+        &:before {
+            height: 0;
+            width: 12px;
+            top: 14px;
+            left: 8px;
+            transition: .5s opacity;
+        }
+
+        &:after {
+            width: 0;
+            height: 12px;
+            top: 8px;
+            left: 14px;
+        }
+
+        &:hover {
+            transform: rotate(90deg);
+
+            &:before {
+                opacity: 0;
+            }
         }
 
         &-pulse {
