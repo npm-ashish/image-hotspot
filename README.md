@@ -14,11 +14,6 @@ Image hotspot feature for showing details about specific feature of product
 ```javascript
 import ImageHotspots from 'image-hotspot';
 
-/*
-// if using plain JS, import this way
-import ImageHotspots from "./node_modules/image-hotspot/index.js";
-*/
-
 const hotspotElm = document.querySelector('.image-hotspot');
 const hotspotInstance = new ImageHotspots(hotspotElm);
 ```
