@@ -25,6 +25,10 @@ header {
     text-align:center;
     transition: all 0.2s;
 
+    &--black {
+        background-color: #000;
+    }
+
     &:hover{
      border-color: rgb(135, 0, 70);
     }
