@@ -2,13 +2,15 @@
 Image hotspot feature for showing details about specific feature of product
 
 ## Directions:
-- Up left
-- Up right
-- Down left
-- Down right (done)
-- Left Up (done)
-- Left down (done)
-- Right Up
-- Right down
 
-["up-left", "up-right", "down-left", "down-right", "left-up", "left-down", "right-up", "right-down"]
+| Direction Name  | Value       |
+| ------------- |:-------------:|
+| Up left       |  up-left      |
+| Up right      |  up-right     |
+| Down left     |  down-left    |
+| Down right    |  down-right   |
+| Left Up       |  left-up      |
+| Left down     |  left-down    |
+| Right Up      |  right-up     |
+| Right down    |  right-down   |
+

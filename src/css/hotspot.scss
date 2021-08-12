@@ -42,19 +42,19 @@
     &__spacer {
         display: block;
         
-        &--left {
+        &--left-border {
             border-left: 2px dotted #a6a6a6;
         }
 
-        &--right {
+        &--right-border {
             border-right: 2px dotted #a6a6a6;
         }
 
-        &--up {
+        &--up-border {
             border-top: 2px dotted #a6a6a6;
         }
 
-        &--down {
+        &--down-border {
             border-bottom: 2px dotted #a6a6a6;
         }
     }
@@ -82,6 +82,8 @@
         border-radius: 50%;
         outline: none;
         user-select: none;
+        position: relative;
+        z-index: 1;
 
         &:before {
             content: '+';

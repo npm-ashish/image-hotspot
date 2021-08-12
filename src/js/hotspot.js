@@ -5,8 +5,6 @@ export default class Hotspot {
     targetElm;
 
     constructor (targetElm, config) {
-        // console.log(targetElm, config);
-
         this.targetElm = targetElm;
         this.hotspotItem = this.createHotspotItem(config.position);
         this.triggerElm = this.createTrigger();
@@ -42,9 +40,18 @@ export default class Hotspot {
         return elm;
     }
 
-    createSpacer(direction, distance) {
+    createSpacer = (direction, distance) => {
         const elm = document.createElement('div');
+        const directionClass = this.isHorizontal(direction) ? 'horizontal' : 'vertical';
+
         elm.classList.add('image-hotspot__spacer');
+        elm.classList.add('image-hotspot__spacer--' + directionClass);
+        elm.style.setProperty('--distance', distance);
+
+        //
+        if(this.isHorizontal(direction)) {
+            elm.classList.add('image-hotspot__spacer');
+        }
 
         //
         if(direction.match(/(up|down)\-/g)) {
@@ -57,7 +64,7 @@ export default class Hotspot {
         const direction2 = direction.match(/\-(left|right|up|down)/gi);
 
         if(direction2) {
-            elm.classList.add('image-hotspot__spacer-' + direction2[0]);
+            elm.classList.add('image-hotspot__spacer-' + direction2[0] + '-border');
         }
 
         return elm;
