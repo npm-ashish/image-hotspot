@@ -81,7 +81,6 @@ export default class Hotspot {
         elm.append(contentTextElm);
 
         if(this.isHorizontal(direction)) {
-            elm.style.width = parseFloat(distance) + parseFloat(contentWidth || 200) + 'px';
             elm.classList.add('image-hotspot__content--horizontal');
         }
 
