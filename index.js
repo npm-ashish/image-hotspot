@@ -41,7 +41,6 @@ export default class ImageHotspots {
     }
 
     initMobileView = (event) => {
-        // const firstHotspotItem = this.targetElm.querySelector('.image-hotspot__item');
         const firstNavItem = this.mobileDataWrapper.querySelector('.image-hotspot__mobile-nav-item');
 
         if(!event) {
@@ -52,7 +51,9 @@ export default class ImageHotspots {
         if(event.matches) {
             firstNavItem.click();
         } else {
-            console.log('destroy mobile view');
+            // de-active the active hotspot when switching to bigger screen
+            const activeHotspotItem = this.targetElm.querySelector('.image-hotspot__item--active');
+            activeHotspotItem.classList.remove('image-hotspot__item--active');
         }
     }
 }
