@@ -104,6 +104,24 @@
           animation: close-vertical-spacer .8s ease-in 1;
 }
 
+@media screen and (max-width: 991px) {
+  .image-hotspot__item {
+    display: none;
+  }
+  .image-hotspot__item--active {
+    display: block;
+  }
+  .image-hotspot__item--active .image-hotspot__trigger {
+    display: block;
+  }
+  .image-hotspot__item--active .image-hotspot__trigger:after {
+    display: none;
+  }
+  .image-hotspot__item--active .image-hotspot__content {
+    display: none !important;
+  }
+}
+
 .image-hotspot__trigger {
   background-color: #fff;
   border: 1px solid #a6a6a6;
@@ -173,6 +191,43 @@
 .image-hotspot__trigger-pulse--2 {
   -webkit-animation: pulse 2s linear infinite 1s;
           animation: pulse 2s linear infinite 1s;
+}
+
+.image-hotspot__mobile-wrapper {
+  display: none;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 991px) {
+  .image-hotspot__mobile-wrapper {
+    display: block;
+  }
+}
+
+.image-hotspot__mobile-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.image-hotspot__mobile-nav-item {
+  background: #000;
+  border: 0;
+  border-radius: 50%;
+  display: block;
+  padding: 0;
+  height: 10px;
+  width: 10px;
+}
+
+.image-hotspot__mobile-nav-item--active {
+  height: 18px;
+  width: 18px;
+  margin: -4px;
 }
 
 @-webkit-keyframes pulse {

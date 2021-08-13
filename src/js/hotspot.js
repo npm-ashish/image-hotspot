@@ -3,19 +3,28 @@ export default class Hotspot {
     triggerElm;
     contentElm;
     targetElm;
+    mobileNavElm;
+    mobileDataElm;
 
-    constructor (targetElm, config) {
+    constructor (targetElm, config, mobileViewWrapper) {
         this.targetElm = targetElm;
         this.hotspotItem = this.createHotspotItem(config.position);
         this.triggerElm = this.createTrigger();
         this.contentElm = this.createContent(config);
+        this.mobileNavElm = mobileViewWrapper.querySelector('.image-hotspot__mobile-nav');
+        this.mobileDataElm = mobileViewWrapper.querySelector('.image-hotspot__mobile-data');
+
+        //
+        const mobileNavItem = this.createMobileNavItem();
 
         // append items
         this.hotspotItem.appendChild(this.triggerElm);
         this.hotspotItem.appendChild(this.contentElm);
+        this.mobileNavElm.appendChild(mobileNavItem);
 
         // add event-handler to trigger
         this.triggerElm.addEventListener('click', this.toggleHotspot);
+        mobileNavItem.addEventListener('click', (event) => this.onMobileNavClick(event.target, config.content));
 
         // add hotspot item into DOM
         targetElm.appendChild(this.hotspotItem);
@@ -195,6 +204,38 @@ export default class Hotspot {
                 item.classList.remove('image-hotspot__item--closing');
                 item.classList.remove('image-hotspot__item--active');
             }, 800);
+        });
+    }
+
+    createMobileNavItem() {
+        const elm = document.createElement('button');
+        elm.classList.add('image-hotspot__mobile-nav-item');
+        return elm;
+    }
+
+    onMobileNavClick(elm, content) {
+        this.mobileDataElm.innerHTML = content;
+        let itemIndex;
+
+        //
+        const allNavItems = this.mobileNavElm.querySelectorAll('.image-hotspot__mobile-nav-item');
+        allNavItems.forEach((item, index) => {
+            if(item === elm) {
+                itemIndex = index;
+                item.classList.add('image-hotspot__mobile-nav-item--active');
+            } else {
+                item.classList.remove('image-hotspot__mobile-nav-item--active');
+            }
+        });
+
+        //
+        const allHotspotItems = this.targetElm.querySelectorAll('.image-hotspot__item');
+        allHotspotItems.forEach((item, index) => {
+            if(index === itemIndex) {
+                item.classList.add('image-hotspot__item--active');
+            } else {
+                item.classList.remove('image-hotspot__item--active');
+            }
         });
     }
 
